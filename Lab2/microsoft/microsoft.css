@@ -1,0 +1,111 @@
+#mic {
+    position: relative;
+    width: 8%;
+    margin-left: 60px;
+    margin-top: 10px;
+}
+#log {
+    position	: relative;
+    margin-top: 15px;
+    width		: 108%; /* for IE 6 */
+}
+
+h2 {
+    position	: absolute;
+    font-size: 287%;
+    color: #fafafa;
+    top		: 165px;
+    left		: 101px;
+    width		: 100%;
+}
+#p5 {
+    font-size: 110%;
+    font-family: Segoe UI;
+}
+
+#check_pc{
+    font-size: 140%;
+    font-family: Segoe UI;
+}
+.boxed {
+    border: 4px solid #1877f2;
+    background: #3b5998;
+    margin-right: 20px;
+}
+.d1{
+    top: 650px;
+    left: 450px;
+}
+#para{
+    font-size: 21px;
+    font-family: "Arial Black";
+}
+#txt{
+    font-size: 16px;
+    font-family: Segoe UI;
+}
+#para2{
+    font-size: 21px;
+    font-family: "Arial Black";
+}
+.d2{
+    top: 650px;
+    left: 100px;
+}
+#txt2{
+    font-size: 16px;
+    font-family: Segoe UI;
+}
+.d3{
+    top: 650px;
+    left: 800px;
+}
+#para3{
+    font-size: 21px;
+    font-family: "Arial Black";
+}
+#txt3{
+    font-size: 16px;
+    font-family: Segoe UI;
+}
+.d4{
+    top: 650px;
+    left: 1150px;
+}
+#para4{
+    font-size: 21px;
+    font-family: "Arial Black";
+}
+#txt4{
+    font-size: 16px;
+    font-family: Segoe UI;
+}
+#type{
+    font-size: 18px;
+    font-family: Segoe UI;
+    color: #1877f2;
+}
+.d1\.2{
+    left: 170px;
+}
+#type2{
+    font-size: 18px;
+    font-family: Segoe UI;
+    color: #1877f2;
+}
+#type3{
+    font-size: 18px;
+    font-family: Segoe UI;
+    color: #1877f2;
+}
+#type4{
+    font-size: 18px;
+    font-family: Segoe UI;
+    color: #1877f2;
+}
+#type5{
+    font-size: 18px;
+    font-family: Segoe UI;
+    color: #1877f2;
+}
+
