@@ -1,0 +1,32 @@
+<h2>Products</h2>
+
+<div *ngFor="let product of products">
+  <h3>
+    <a [title]="product.name + ' details'"
+       [routerLink]="['/products', product.id]">
+      {{ product.name }}
+    </a>
+  </h3>
+  <img src="{{product.image_url}}" height="200px">
+
+  <p *ngIf="product.description">
+    Description: {{ product.description }}
+  </p>
+  <p>
+    {{product.likes}} Likes
+  </p>
+  <a href="https://t.me/share/url?url={{product.kaspi_link}}&text={{product.name}}">
+    <button type="button">
+      Share
+    </button>
+  </a>
+  <app-product-alerts
+    [product]="product"
+    (notify)="onNotify()">
+  </app-product-alerts>
+  <form>
+    <button (click) = "liked(product)" type="button">
+      Like
+    </button>
+  </form>
+</div>

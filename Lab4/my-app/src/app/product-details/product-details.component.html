@@ -1,0 +1,10 @@
+<h2>Product Details</h2>
+
+<div *ngIf="product">
+  <h3>{{ product.name }}</h3>
+  <h4>{{ product.price }} ₸</h4>
+  <p>{{ product.description }}</p>
+  <p>Rating: {{ product.rating}}</p>
+  <p><a href={{product.kaspi_link}}>Kaspi</a></p>
+  <button type="button" (click)="addToCart(product)">Buy</button>
+</div>

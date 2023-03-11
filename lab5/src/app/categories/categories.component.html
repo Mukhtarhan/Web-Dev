@@ -1,0 +1,10 @@
+<body>
+<div *ngFor="let category of categories">
+  <button (click)="change_cat(category.id)">
+    {{category.name}}
+  </button>
+</div>
+<a routerLink="/products">
+  <h2>Show</h2>
+</a>
+</body>
