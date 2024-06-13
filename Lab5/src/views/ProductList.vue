@@ -4,7 +4,8 @@
         <ProductItem 
           v-for="product in filteredProducts" 
           :key="product" 
-          :product="product" 
+          :product="product"
+          @delete="deleteProduct" 
           />
         
       </div>
@@ -16,18 +17,18 @@
 import { useRoute } from 'vue-router'
 import ProductItem from '../components/ProductItem.vue';
 import { products } from '../database/db'; 
-import { onMounted, ref } from "vue"
+import { ref } from "vue"
 
 const route = useRoute()
 const id = parseInt(route.params.id)
 const filteredProducts = ref([])
 
 
-onMounted(() => {
-  filteredProducts.value = products.filter(product => product.cat === id)
-})
+filteredProducts.value = products.filter(product => product.cat === id);
 
-
+function deleteProduct(productId) {
+  filteredProducts.value = filteredProducts.value.filter(product => product.id !== productId);
+}
 
 
 

@@ -25,6 +25,7 @@
           <span>{{ likes }}</span>
         </div>
       </div>
+      <button @click="deleteProduct" class="btn">Удалить</button>
     </div>
   </div>
 </template>
@@ -42,10 +43,15 @@ const props = defineProps({
 
 const isLiked = ref(false);
 const likes = ref(props.product.likes);
+const emit = defineEmits(['delete']);
 
 function handleLikeClick() {
   isLiked.value = !isLiked.value;
   likes.value += isLiked.value ? 1 : -1;
+}
+
+function deleteProduct() {
+  emit('delete', props.product.id); 
 }
 
 
@@ -59,6 +65,20 @@ function handleLikeClick() {
   gap: 4px;
 }
 
+.btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  background-color: green;
+  font-weight: 600;
+  color: white;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 16px;
+  cursor: pointer;
+}
+.btn:hover {
+  opacity: 0.7;
+}
 .heart {
   cursor: pointer;
 }
@@ -67,6 +87,7 @@ function handleLikeClick() {
   font-size: 1.2em;
   color: gold;
 }
+
 
 .product-card {
   border-radius: 8px;
