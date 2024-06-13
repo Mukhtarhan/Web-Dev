@@ -9,7 +9,9 @@
         </span>
       </div>
       <div class="buttons">
-        <a href="https://t.me/share/url?url={{product.kaspi_link}}&text={{product.name}}"><button class="btn">Share</button></a>
+        <a :href="[telegramShareURL(product.kaspi_link, product.name)]" target="_blank">
+    <button class="btn">Share</button>
+  </a>
         <a v-bind:href="product.kaspi_link"><button class="btn">See more</button></a>
       </div>
     </div>
@@ -24,6 +26,9 @@
         default: () => {}
     }
   });
+  function telegramShareURL(url, text) {
+      return `https://t.me/share/url?url=${encodeURIComponent(url)}&text=${encodeURIComponent(text)}`;
+    }
   </script>
   
   <style scoped>
