@@ -1,0 +1,17 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  font-size: 20px;
+  padding: 10px;
+  transition: background-color 0.3s ease;
+}
+a:hover {
+  background-color: darkseagreen;
+  color: greenyellow;
+}
