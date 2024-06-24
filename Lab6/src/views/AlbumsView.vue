@@ -4,7 +4,7 @@
 <div v-if="!loading">
     <ul>
       <li v-for="album of albums" :key="album">
-        <router-link :to="`/albums/${album.id}`">{{album.id}}) {{album.title}}</router-link>
+        <router-link :to="`/albums/${album.id}`"> - {{album.title}}</router-link>
         <button class="delete-button" type="button" @click="deleteAlbum(album.id)"> Delete </button>
       </li>
     </ul>
