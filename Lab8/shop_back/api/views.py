@@ -1,35 +1,25 @@
-from django.shortcuts import render
-from django.shortcuts import get_object_or_404
-from django.http import JsonResponse
+from rest_framework import generics
 from .models import Product, Category
+from .serializers import ProductSerializer, CategorySerializer
 
+class ProductList(generics.ListCreateAPIView):
+    queryset = Product.objects.all()
+    serializer_class = ProductSerializer
 
-def products_list(request):
-    products = Product.objects.all()
-    data = [product.to_json() for product in products]
-    return JsonResponse(data, safe=False)
+class ProductDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Product.objects.all()
+    serializer_class = ProductSerializer
 
+class CategoryList(generics.ListCreateAPIView):
+    queryset = Category.objects.all()
+    serializer_class = CategorySerializer
 
-def product_detail(request, id):
-    product = get_object_or_404(Product, id=id)
-    data = product.to_json()
-    return JsonResponse(data)
+class CategoryDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Category.objects.all()
+    serializer_class = CategorySerializer
 
+class ProductsByCategory(generics.ListAPIView):
+    serializer_class = ProductSerializer
 
-def categories_list(request):
-    categories = Category.objects.all()
-    data = [category.to_json() for category in categories]
-    return JsonResponse(data, safe=False)
-
-
-def category_detail(request, id):
-    category = get_object_or_404(Category, id=id)
-    data = category.to_json()
-    return JsonResponse(data)
-
-
-def category_products(request, id):
-    category = get_object_or_404(Category, id=id)
-    products = category.product_set.all()
-    data = [product.to_json() for product in products]
-    return JsonResponse(data, safe=False)
+    def get_queryset(self):
+        return Product.objects.filter(category_id=self.kwargs['id'])
